@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins",
+sans-serif;
+    background: linear-gradient(135deg, #1a0533, #3b0764, #6b21a8);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ==============================
+    ANIMATED BACKGROUND
+============================== */
+
+.background-shape span {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    z-index:-1;
+    animation: float 8s infinite
+alternate ease-in-out;
+}
+
+.background-shapes span:nth-child(1)
+{
+    width: 300px;
+    height:  300px;
+    background: #6c63ff;
+    top: 10%;
+    left: -100px;
+}
+
+.background-shapes span:nth-child(2)
+{
+    width: 250px;
+    height: 250px;
+    background: #00d4ff;
+    right: -80px;
+    top: 40%;
+    animation-delay: 2s;
+}
+.background-shapes span:nth-child(3)
+{
+    width: 250px;
+    height: 250px;
+    background: #ff4ecd;
+    bottom: 20%;
+    animation-delay: 3s;
+}
+
+.background-shapes span:nth-child(3)
+{
+    width: 200px;
+    height: 200px;
+    background: #6c63ff;
+    bottom: 0;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    from {
+        transfrom: translateY(0)
+translateX(0);
+    }
+
+    to{
+        transfrom: translateY(80px)
+translateX(50px);
+    }
+}
+
+/*=================================
+  NAVBAR
+===============================*/
+
+.navbar{
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(59, 7, 100, 0.85);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span,
+footer span {
+    color: #00d4ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-linksa:hover {
+    color: #00d4ff;
+}
+
+.nav-btn:hover {
+    transform: scale(1.08);
+    background: #00a8cc;
+}
+
+/* ==================================
+    HERO
+================================== */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 8% 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: heroFade 1.5s ease;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tag {
+    color: #00d4ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #6c63ff, #00d4ff, #ff4ecd);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s inifinite linear;
+}
+
+@keyframes gradientMove {
+    from{
+        background-position: 0%;
+    }
+    to {
+        background-position: 200%;
+    }
+}
+
+#typing-text {
+    color: #00d4ff;
+    margin: 20px 0;
+    min-height: 30px;
+}
+
+.hero-text {
+    color: #c9c9d4;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: linear-gradient(90deg, #6c63ff, #00d4ff);
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.secondary-btn {
+    border: 1px solid #00d4ff;
+    color: white;
+}
+
+secondary-btn:hover {
+    background: #00d4ff;
+    color: #0b1020;
+}
+
+/* ============================
+   COUNTDOWN
+=========================== */
+
+.countdown-box {
+    margin-top: 60px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(88, 28, 135, 0.45);
+    backdrop-filter: blur(10px);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.30);
+    }
+}
+
+.countdown-box h3 {
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    gap: 15px;
+}
+
+.time-box {
+    min-width: 80px;
+    text-align: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color:#00d4ff;
+}
+
+.time-box small {
+    color: #c9c9d4;
+}
+
+/* ===============================
+    SECTION
+================================ */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p, 
+.small-title {
+    color: #00d4ff;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-title h2,
+.about h2,
+.register h2 {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* ===============================
+    EVENT CARDS
+============================== */
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.event-card {
+    padding: 35px 25px;
+    border-radius: 20px;
+    background: rgba(88, 28, 135, 0.35);
+    border: 1px solid rgba(216, 180, 254, 0,25);
+    transition: 0.4s;
+}
+
+.event-card:hover {
+    transform: translateY(-15px);
+    border-color: #00d4ff;
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+}
+
+.event-icon {
+    font-size: 45ox;
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.event-card p {
+    color: #c9c9d4;
+    line-height: 1.7;
+}
+
+.event-card button {
+    margin-top: 20px;
+    border: none;
+    background: none;
+    color: #00d4ff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* =====================================
+    SCHEDULE
+=================================== */
+
+.schedule-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.schedule-item {
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.schedule-item:hover {
+    transform: translateX(10px);
+    background: rgba(108, 99, 255, 0.15);
+}
+
+.schedule-time {
+    color: #00d4ff;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.schedule-info p {
+    color: #c9c9d4;
+    margin-top: 5px;
+}
+
+/* ===============================
+    ABOUT
+============================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about p {
+    color: #c9c9d4;
+    line-height: 1.8;
+    margin: 20px0 30px;
+}
+
+.about-box {
+    text-align: center;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.3), rgba(0, 212, 255, 0.15));
+    border-radius: 25px;
+    animation: boxfloat 3s infinite alternate ease-in-out;
+}
+
+@keyframes boxfloat {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+.about-box div {
+    font-size: 60px;
+}
+
+.about-box h3 {
+    margin: 20px 0;
+}
+
+/* ==========================
+    REGISTER
+========================== */
+
+.register { 
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.register-content {
+    max-width: 800px;
+    margin: auto;
+
+    padding:60px 30px;
+    border-radius:  25px;
+
+    background: linear-gradient( 
+        135deg,
+        rgba(108, 99, 225,0.4),
+        rgba(0, 212, 255, 0.2)
+    );
+}
+
+.register-content p{
+    color: #d5d5df;
+    margin: 20px 0 30px;
+}
+.register-btn {
+    padding: 15px 30px;
+
+    background: white;
+    color: #0b1020;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.register-btn:hover{
+    transform: scale(1.1);
+}
+
+/* ========================
+   FOOTER
+========================*/
+
+footer{
+    text-align: center;
+    padding: 40px 20px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+}
+
+footer h2{
+    font-size: 28px;
+}
+
+footer {
+    color: #c9c9d4;
+    margin-top: 10px;
+
+}
+.copyright {
+    font-size: 13px;
+    margin-top: 20px;
+
+}
+
+/*==========================
+  SCROLL REVEAL
+=========================*/
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*========================
+ RESPONSIVE DESIGN
+=======================*/
+
+@media (max-width: 900px) {
+ 
+      .hero h1  { 
+        font-size: 50px;
+      }
+
+      .event-container {
+         grid-template-columns: 1fr;
+      }
+
+      .about-content {
+         grid-template-columns: 1fr;
+      }
+
+      .nav-link {
+         display: none;
+      }
+
+ }
+
+ @media (max-width: 600px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+ .nav-btn{
+    padding: 8px 14px;
+    font-size: 13px;
+
+ }
+
+ .hero {
+    padding: 130px 7% 60px;
+
+ }
+ .hero h1 {
+    font-size: 15px;
+
+ }
+
+ .countdown {
+    gap: 8px;
+
+ }
+
+ .time-box {
+    min-width: 65px;
+    padding: 8px;
+
+ }
+ 
+ .section {
+    padding: 70px 7%;
+
+ }
+
+ .section-title h2,
+ .about h2,
+ .register h2 {
+    font-size: 30px;
+
+ }
+
+ .schedule-item {
+    flex-direction: column;
+    gap: 10px;
+ }
+}
